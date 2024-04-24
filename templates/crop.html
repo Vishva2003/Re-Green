@@ -1,0 +1,176 @@
+<!-- {% extends 'layout.html' %} -->
+
+{% block body %}
+
+<style>
+
+  
+  
+  .button {
+    width: 110px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    color: #010101;
+    font-weight: 600;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    transition-duration: .2s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
+    padding-left: 8px;
+    transition-duration: .5s;
+  }
+  
+  .svgIcon {
+    height: 25px;
+    transition-duration: 1.5s;
+  }
+  
+  .bell path {
+    fill: rgb(19, 19, 19);
+  }
+  
+  .button:hover {
+ 
+    transition-duration: .5s;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button:active {
+    transform: scale(0.97);
+    transition-duration: .2s;
+  }
+  
+  .button:hover .svgIcon {
+    transform: rotate(250deg);
+    transition-duration: 1.5s;
+  }
+  
+  
+  
+</style>
+<!--Form Section-->
+
+<div>
+  <form method="POST" action="{{ url_for('crop_prediction') }}" class="formm">
+    <h1>
+      <b>Ideal Harvest Picks</b>
+    </h1>
+    <div class="fdata">
+      <div class="roww">
+        <div class="form-group">
+          <label for="Nitrogen" style="font-size: 16px"><b>Nitrogen</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Nitrogen"
+            name="nitrogen"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="Phosphorus" style="font-size: 16px"
+            ><b>Phosphorus</b></label
+          >
+          <input
+            type="number"
+            class="form-control"
+            id="Phosphorous"
+            name="phosphorous"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+      </div>
+      <div class="roww">
+        <div class="form-group">
+          <label for="Potassium" style="font-size: 16px"><b>Potassium</b></label>
+          <input
+            type="number"
+            class="form-control"
+            id="Pottasium"
+            name="pottasium"
+            placeholder="Enter the value (example:50)"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="ph" style="font-size: 16px"><b>pH level</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="ph"
+            name="ph"
+            placeholder="Enter the value"
+            style="font-weight: bold"
+            required
+          />
+        </div>
+      </div>
+        <div class="form-group">
+          <label for="Rainfall" style="font-size: 16px"><b>Rainfall (in mm)</b></label>
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="Rainfall"
+            name="rainfall"
+            placeholder="Enter the value"
+            style="font-weight: bold"
+            required
+          />
+         
+        </div>
+        <div class="roww" style="margin-top: 20px;">
+        <div class="form-group">
+          <label for="State" style="font-size: 16px "><b>State</b></label>
+          <select
+            onchange="print_city('state', this.selectedIndex);"
+            id="sts"
+            name="stt"
+            class="form-control"
+            style="font-weight: bold; color: black;"
+            
+            required
+          ></select>
+          </div>
+          <div class="form-group">
+          <label for="City" style="font-size: 16px"><b>City</b></label>
+          <select
+            id="state"
+            class="form-control"
+            name="city"
+            style="font-weight: bold; color: black;"
+            required
+          ><option value="value" selected>Select City &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option></select>
+          <script language="javascript">
+            print_state("sts");
+          </script>
+          </div>
+        </div>
+     </div>
+        <div class="d-flex justify-content-center">
+          <button class="button">
+            <svg class="svgIcon" viewBox="0 0 512 512" height="1em" xmlns="http://www.w3.org/2000/svg"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm50.7-186.9L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"></path></svg>
+           Predict
+         </button>
+        </div>
+    </div>
+  </form>
+</div>
+
+
+
+<!-- Form section -->
+
+{% endblock %}
