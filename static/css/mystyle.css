@@ -4,7 +4,7 @@ html,
 body {
     margin: 0;
     font-size: 100%;
-	background: #67ff58;
+	
 	font-family: 'Thasadith', sans-serif;
 	overflow-x: hidden;
 }
@@ -145,14 +145,26 @@ nav a {
 	margin-left: 10px;
     font-size: 17px;
     font-weight: 800;
+
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	font-family: "Montserrat", sans-serif;
+	
+	overflow: hidden;
+	cursor: pointer;
+	border: none;
 }
 
 
-
-
 nav a:hover { 
-	color: #010101;
 	font-weight: bolder;
+	color: #67ff58;
+
+   animation: scaleUp 0.3s ease-in-out;
+   background-color: #010101;
 	
 }
 .menu li.active  a{ 
@@ -519,7 +531,6 @@ li > a:only-child:after { content: ''; }
 .formf{
 	width: 30vw;
 	margin: auto;
-	border: 2px solid black;
 	margin-top: 30px;
 	margin-bottom: 40px;
 	padding: 30px 0 30px 0;
@@ -549,7 +560,6 @@ li > a:only-child:after { content: ''; }
 .formd{
 	width: 60vw;
 	margin: auto;
-	border: 2px dashed black;
 	margin-top: 20px;
 	margin-bottom: 30vh;
 	padding: 30px 0 30px 0;
@@ -619,7 +629,7 @@ input::placeholder {
 	margin-bottom: 12px;
 }
 .box22{
-    height: 88vh;
+    height: 77vh;
 	width: 88vw;
 	margin: auto;
 	color: rgb(12, 11, 11);
@@ -1944,7 +1954,7 @@ a.move-top {
 
 	position: relative;
 	width: 100%;
-	background: #80cd2b;
+	background: #3586ff;
 	min-height: 100px;
 	padding: 20px 50px;
 	display: flex;
@@ -2007,7 +2017,7 @@ a.move-top {
 	left: 0;
 	width: 100%;
 	height: 100px;
-	background: url("https://i.postimg.cc/FKgbcNNw/wave.png");
+	background: url("https://i.ibb.co/wQZVxxk/wave.png");
 	background-size: 1000px 100px;
   }
   

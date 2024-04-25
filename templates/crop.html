@@ -24,6 +24,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.116);
     padding-left: 8px;
     transition-duration: .5s;
+    margin-top: 40px;
   }
   
   .svgIcon {
@@ -38,6 +39,7 @@
   .button:hover {
  
     transition-duration: .5s;
+    background: #85e106;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   }
   
@@ -51,6 +53,25 @@
     transition-duration: 1.5s;
   }
   
+
+  
+  .sub-title {
+    font-weight: 600;
+    margin: 5px 0;
+  }
+
+  .form-control {
+    outline: none;
+    border: 2px solid #264143;
+    box-shadow: 3px 4px 0px 1px #88cf16;
+    width: 200px;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  .form-control:focus {
+    transform: translateY(4px);
+    box-shadow: 1px 2px 0px 0px #3586ff;
+  }
   
   
 </style>
@@ -64,7 +85,7 @@
     <div class="fdata">
       <div class="roww">
         <div class="form-group">
-          <label for="Nitrogen" style="font-size: 16px"><b>Nitrogen</b></label>
+          <label class="sub-title" for="Nitrogen" style="font-size: 16px"><b>Nitrogen</b></label>
           <input
             type="number"
             class="form-control"

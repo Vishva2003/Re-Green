@@ -20,7 +20,7 @@ from flask import jsonify
 
 # ==============================================================================================
 
-# -------------------------LOADING THE TRAINED MODELS -----------------------------------------------
+# -------------------------LOADING THE TRAINED MODELS ---------------  #85c3cd  --------------------------------
 
 # Loading plant disease classification model
 
@@ -205,11 +205,13 @@ def crop_prediction():
 
 @ app.route('/fertilizer-predict', methods=['POST'])
 def fert_recommend():
+   
+    
     crop_name = str(request.form['cropname'])
     N = int(request.form['nitrogen'])
     P = int(request.form['phosphorous'])
     K = int(request.form['pottasium'])
-    ph = float(request.form['ph'])
+    # ph = float(request.form['ph'])
 
     df = pd.read_csv('Data/FertilizerData.csv')
 

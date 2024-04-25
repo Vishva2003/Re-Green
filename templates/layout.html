@@ -116,18 +116,31 @@ h2 {
 			display: block;
 
 		}
+
+		.collapse .navbar-collapse .nav-link{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 5px;
+			font-family: "Montserrat", sans-serif;
+			
+			overflow: hidden;
+			cursor: pointer;
+			border: none;
+
+		}
 	</style>
 </head>
 
 <body>
-
+	
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg static-top" style="background-color: #1C00ff00;">
 		<div class="container">
-			<a class="navbar-brand" href="{{ url_for('home') }}">
+		
 				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 55px; height: 55px" alt="">
-				<span style="font-family: 'kanit';letter-spacing: 0.5px;color: #010101;font-size:larger">Re'Green</span>
-			</a>
+				<span style="font-family: 'kanit';letter-spacing: 0.5px;color: #010101;font-size:25px;font-weight:600 ">Re'Green</span>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -138,6 +151,7 @@ h2 {
 						<a class="nav-link" href="{{ url_for('home') }}">Home
 							<span class="sr-only">(current)</span>
 						</a>
+						
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
