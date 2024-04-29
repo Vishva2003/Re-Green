@@ -18,7 +18,7 @@
 	  }
 	  
 	  .cards .red {
-		background: #8d7b7b33;
+		background: #92745B;
 	  }
 	  
 	  .cards .blue {
@@ -35,7 +35,7 @@
 		justify-content: center;
 		flex-direction: column;
 		text-align: center;
-		height: 700px;
+		height: 500px;
 		width: 300px;
 		border-radius: 10px;
 		color: white;
@@ -46,7 +46,7 @@
 	  
 	  .cards .card p.tip {
 	
-		color: #010101;
+		color: #010101c2;
 		font-family: 'Bebas Neue', sans-serif;
 		font-weight: 600;
 		font-size: 25px;
@@ -58,7 +58,7 @@
 		font-size: .7em;
 		width:240px;
 		padding:20px;
-		color : #010101d0;
+		color : #ffffffd0;
 		text-align: justify;
 		letter-spacing: 1.25px;
 		font-weight: 600;
@@ -324,19 +324,22 @@
 			<div class="cards">
 				<a href="{{ url_for('crop_recommend') }}">
 				<div class="card red">
-					<img id="output-image" class="img" src="https://cdn.dribbble.com/users/2526816/screenshots/13916508/media/220487c12c03e15fd14458fa428802f5.gif"/>
+					
+					<img id="output-image" class="img" src="static\images\crop.gif"/>
 					<p class="tip">Crop Recommendation</p>
 					<p class="second-text">Suggests the most suitable crops to be grown based on the prevailing environmental and climatic conditions.</p>  
 				</div>
 				</a>
 				<a href="{{ url_for('fertilizer_recommendation') }}">
 				<div class="card blue" >
+					<img id="output-image" class="img" src="static\images\fert.gif"/>
 					<p class="tip">Fertilizer</p>
 					<p class="second-text">Advises on the ideal fertilizer for a specific soil and recommends a compatible crop for better productivity.</p>
 				</div>
 				</a>
 				<a href="{{ url_for('disease') }}">
 				<div class="card green">
+					
 					<p class="tip">Disease prediction</p>
 					<p class="second-text">Predicts crop name and diseases, identify causes and provides effective solutions for curing them.</p>
 				</div>
