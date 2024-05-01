@@ -5,13 +5,13 @@
 <style>
 	
 
-	  .cards {
+	.cards {
 		display: flex;
 		flex-direction: row;
 		gap: 100px;
 	  }
 	  
-	  .img{
+	  .cards .img{
 		height:auto;
 		width:180px;
 		margin-bottom:30px
@@ -22,7 +22,7 @@
 	  }
 	  
 	  .cards .blue {
-		background-color: #3b82f6;
+		background-color: #ff7300db;
 	  }
 	  
 	  .cards .green {
@@ -50,7 +50,7 @@
 		font-family: 'Bebas Neue', sans-serif;
 		font-weight: 600;
 		font-size: 25px;
-		text-align: left;
+	
 		
 	  }
 	  
@@ -72,6 +72,7 @@
 		filter: blur(10px);
 		transform: scale(0.9, 0.9);
 	  }
+
 
 	  /*3buttons*/
 	  .button1 {
@@ -198,7 +199,12 @@
 		  transform: rotate(0);
 		}
 	  }
-	  
+	
+	  model-viewer{
+		height: 600px;
+		width: 500px;
+		margin: 0 auto;
+	  }
 
 
 </style>
@@ -282,7 +288,11 @@
 									</a>
 								</div>
 								<div class="b2">
-									<img src="{{ url_for('static', filename='images/pot.png') }}" />
+									<!-- Use it like any other HTML element -->
+									<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
+													src="{{ url_for('static', filename='images/plants_3d.glb') }}" ar 
+													 shadow-intensity="1" camera-controls touch-action="pan-y">
+									</model-viewer>
 								</div>
 							</div>
 						</div>
@@ -304,11 +314,18 @@
 			
 			<div class="content">
 				<div class="col-lg-6 core-left">
-					<img src="{{ url_for('static', filename='images/ab.gif') }}" class="img-fluid" alt="" />
+					<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" 
+					src="{{ url_for('static', filename='images/wall_plant_phytowall.glb') }}" ar 
+					 shadow-intensity="1" camera-controls touch-action="pan-y">
+					</model-viewer>
+					
 				</div>
 				<div class="ab">
-					<h2>Welcome to Hariyali, where innovation meets agriculture</h2>
-					<p>Our team is dedicated to revolutionizing crop health management through cutting-edge services. We employ advanced machine learning and deep learning technologies to assist you in navigating the entire farming process. Make well-informed decisions by analyzing local demographics, understanding crop-affecting factors, and maintaining crop health for better yields.</p>
+					<h2>Welcome to Re'Green, where agriculture and innovation come together</h2>
+					<p>Our team is devoted to revolutionizing the management of crop health through cutting-edge services. We leverage advanced machine learning and deep learning technologies to facilitate navigation of the entire farming process. Our services enable you to make well-informed decisions by analyzing local demographics, comprehending crop-affecting factors, and sustaining crop health for optimal yields.</p>
+					<p>
+						<br>Our team employs sophisticated technologies to provide innovative solutions for the management of crop health. Our expertise in machine learning and deep learning enable us to effectively streamline the farming process. Our services empower you to make informed decisions by analyzing local demographics, understanding the factors that affect crop health, and maintaining optimal crop health for better yields.</p>
+					
 				</div>
 			</div>
 		</div>
@@ -322,28 +339,33 @@
 		<h1> Our Services</h1>
 		<div class="services">
 			<div class="cards">
-				<a href="{{ url_for('crop_recommend') }}">
+				
 				<div class="card red">
-					
+					<a href="{{ url_for('crop_recommend') }}">
 					<img id="output-image" class="img" src="static\images\crop.gif"/>
 					<p class="tip">Crop Recommendation</p>
 					<p class="second-text">Suggests the most suitable crops to be grown based on the prevailing environmental and climatic conditions.</p>  
+					</a>
 				</div>
-				</a>
-				<a href="{{ url_for('fertilizer_recommendation') }}">
+				
+				
 				<div class="card blue" >
+					<a href="{{ url_for('fertilizer_recommendation') }}">
 					<img id="output-image" class="img" src="static\images\fert.gif"/>
 					<p class="tip">Fertilizer</p>
 					<p class="second-text">Advises on the ideal fertilizer for a specific soil and recommends a compatible crop for better productivity.</p>
+					</a>
 				</div>
-				</a>
-				<a href="{{ url_for('disease') }}">
+				
+				
 				<div class="card green">
-					
+					<a href="{{ url_for('disease') }}">
+					<img id="output-image" class="img" src="static\images\dis.gif"/>
 					<p class="tip">Disease prediction</p>
 					<p class="second-text">Predicts crop name and diseases, identify causes and provides effective solutions for curing them.</p>
+					</a>			
 				</div>
-				</a>
+				
 			</div>
 		</div>
 	</div>
@@ -351,7 +373,5 @@
 <!-- //Products & Services -->
 
 
-
-</html>
-
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 {% endblock %}

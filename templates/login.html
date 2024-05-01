@@ -11,38 +11,49 @@
   <div class="login-reg-panel">
 		<div class="login-info-box">
 			<h2>Have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
+			<p>Then Just Login!</p>
 			<label id="label-register" for="log-reg-show">Login</label>
 			<input type="radio" name="active-log-panel" id="log-reg-show"  checked="checked">
 		</div>
 							
 		<div class="register-info-box">
 			<h2>Don't have an account?</h2>
-			<p>Lorem ipsum dolor sit amet</p>
+			<p>Register Here!</p>
 			<label id="label-login" for="log-login-show">Register</label>
 			<input type="radio" name="active-log-panel" id="log-login-show">
 		</div>
 							
 		<div class="white-panel">
-			<div class="login-show">
-				<h2>LOGIN</h2>
-				<input type="text" placeholder="Email">
-				<input type="password" placeholder="Password">
-				<input type="button" value="Login">
-				<a href="">Forgot password?</a>
-			</div>
-			<div class="register-show">
+            <div class="login-show">
+                <h2>LOGIN</h2>
+                <p style="text-align:center;color:white">{{ msglog }}</p>
+
+                <form action="/login1" method="POST"> <!-- Added form tag with action attribute -->
+                    <input type="text" id="uname" name="username" placeholder="Email"  required pattern="[A-Za-z]{3,}"> <!-- Added name attribute -->
+                    <input type="password" name="password" placeholder="Password" id="password" > <!-- Added name attribute -->
+                    <button type="submit"  class="btn" value="SIGN IN">
+                        Login
+                    </button> <!-- Changed type to "submit" -->
+                    <input class="form-check-input" type="checkbox" name="check" id="Check" />
+
+                    <a id="login-submit" href="#">Remember me</a>
+                </form>
+            </div>
+			<div class="register-show" id="registerform">
 				<h2>REGISTER</h2>
-				<input type="text" placeholder="Email">
-				<input type="password" placeholder="Password">
-				<input type="password" placeholder="Confirm Password">
-				<input type="button" value="Register">
+                <p style="text-align:center;color:white">{{ msgreg }}</p>
+                <form action="/reg1" method="POST">
+				<input type="text" placeholder="Username" name="username">
+				<input type="password" placeholder="Password" name="password">
+				<input type="email" placeholder="Email" name="email">
+				<button type="submit"  class="btn" value="SIGN IN">
+                    Register
+			    </button>
+            </form>
 			</div>
 		</div>
 	</div>
 
-  <script src="./style/js/main.js">   
-  </script>
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {

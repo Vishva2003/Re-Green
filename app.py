@@ -136,15 +136,12 @@ def predict_image(img, model=disease_model):
 app = Flask(__name__)
 
 
-
-
-# render signup and login form
 app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
-    host='project-12fox.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
-    user='vishva',
+    host='127.0.0.1',
+    user='root',
     password='Vishva2003',
-    database='12Fox'
+    database='regreen'
 )
 cursor = conn.cursor()
 
@@ -158,33 +155,37 @@ def login():
 
 @app.route("/login1", methods=['GET', 'POST'])
 def login1():
-    msg =""
-    if request.method == 'POST':
-        USERNAME = request.form['username']
-        PASSWORD = request.form['password']
+    msglog =""
+    USERNAME = request.form['username']
+    PASSWORD = request.form['password']
+    checked = request.form.get('check')
+    if checked:
+        if request.method == 'POST':
+            USERNAME = request.form['username']
+            PASSWORD = request.form['password']
 
-        query = "SELECT * FROM user WHERE USERNAME = %s AND PASSWORD = %s"
-        cursor.execute(query, (USERNAME, PASSWORD))
-        user=cursor.fetchall()
-        
-        if len(user)>0:
-            session["USER_ID"]=user[0][0]
-            return redirect("/home")
-        else:
-            error="Invalid username or password"
-            return render_template("login.html", msg=error)
-        
-    return render_template('login.html')
+            query = "SELECT * FROM user WHERE USERNAME = %s AND PASSWORD = %s"
+            cursor.execute(query, (USERNAME, PASSWORD))
+            user=cursor.fetchall()
+
+            if len(user)>0:
+                session["USER_ID"]=user[0][0]
+                return redirect("/home")
+            else:
+                error="Invalid username or password"
+                return render_template("login.html", msglog=error)
+
+        return render_template('login.html')
+    else:
+        error="Please check 'Remember me' to stay logged in."
+        return render_template("login.html", msglog=error)
 
 #Routing to the user registration page
 
-@app.route("/reg")
-def reg():
-    return render_template("reg.html")
 
 @app.route("/reg1", methods=['GET', 'POST'])
 def reg1():
-    msg=""
+    msgreg=""
     if request.method == 'POST':
         USERNAME = request.form['username']
         PASSWORD = request.form['password']
@@ -197,6 +198,7 @@ def reg1():
         # If account exists show error and validation checks
         if user:
             msg = 'Account already exists!'
+            return render_template('login.html', msglog=msg)
         elif not re.match(r'[^@]+@[^@]+\.[^@]+', EMAIL):
             msg = 'Invalid email address!'
         elif not re.match(r'[A-Za-z0-9]+', USERNAME):
@@ -209,18 +211,12 @@ def reg1():
             cursor.execute(query, (USERNAME, PASSWORD,EMAIL,))
             user=conn.commit()
             msg = 'You have successfully registered!'
-            return render_template('reg.html', msg=msg)
+            return render_template('login.html', msglog=msg)
     else :
         # Form is empty... (no POST data)
         msg = 'Please fill out the form!'
     # Show registration form with message (if any)
-    return render_template('reg.html', msg=msg)
-
-# render home page
-
-@ app.route('/')
-def login():
-    return render_template('login.html')
+    return render_template('login.html', msgreg=msg)
 
 @ app.route('/home')
 def home():

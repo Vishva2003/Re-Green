@@ -161,10 +161,10 @@ nav a {
 
 nav a:hover { 
 	font-weight: bolder;
-	color: #67ff58;
+	color: #010101;
 
    animation: scaleUp 0.3s ease-in-out;
-   background-color: #010101;
+   background-color: #88cf16;
 	
 }
 .menu li.active  a{ 
@@ -475,15 +475,12 @@ li > a:only-child:after { content: ''; }
 .formm{
 	width: 30vw;
 	margin: auto;
-	
-	margin-bottom: 40px;
 	padding: 30px 0 30px 0;
 	backdrop-filter: blur(10px);
 	background: rgba(255, 255, 255, 0.2);
-	height: 80vh;
 	box-sizing: border-box;
 	border-radius: 15px;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	box-shadow: rgba(149, 157, 165, 0.2) 4px 8px 24px;
 }
 .tryy{
 	width: 98vw;
@@ -536,7 +533,6 @@ li > a:only-child:after { content: ''; }
 	padding: 30px 0 30px 0;
 	backdrop-filter: blur(10px);
 	background: rgba(255, 255, 255, 0.2);
-	height: 75vh;
 	box-sizing: border-box;
 	border-radius: 15px;
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -709,26 +705,26 @@ span:hover{
   }
 
 .res{
-	height: 90vh;
+	height: 80vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .store{
-	background-color: white;
+	background-color: #88cf16;
 	height: fit-content;
 	padding: 5rem;
 	width: fit-content;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 2px solid black;
-	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	box-shadow: #88cf16c9 0px 5px 15px;
 	border-radius: 15px;
 	text-align: justify;
 }
 .store h1{
 	font-size: 2rem;
+	color: #fff;
 }
 .fres{
 	background-color: white;
@@ -1987,6 +1983,7 @@ a.move-top {
   }
   .social-icon__link:hover {
 	transform: translateY(-10px);
+	color: #fff;
   }
   
   .menu__link {
@@ -2066,4 +2063,10 @@ a.move-top {
 	  background-positon-x: 0px;
 	}
   }
-  
+
+
+.hehe{
+	height: 80vh;
+	display: flex;
+	align-items: center;
+}
