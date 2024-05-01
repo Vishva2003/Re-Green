@@ -138,8 +138,8 @@ app = Flask(__name__)
 
 app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
-    host='127.0.0.1',
-    user='root',
+    host='regreen.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
+    user='vishva',
     password='Vishva2003',
     database='regreen'
 )
@@ -344,8 +344,7 @@ def test():
     return message
 
 # ===============================================================================================
-# api endpoints for agro ai
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0",debug=True)
