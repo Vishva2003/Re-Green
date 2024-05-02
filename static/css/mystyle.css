@@ -1947,17 +1947,16 @@ a.move-top {
 
 .footer {
 	bottom: 0;
-
 	position: relative;
 	width: 100%;
 	background: #010101;
 	min-height: 100px;
-	padding: 20px 50px;
+	/* padding: 20px 50px; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-  }
+	}
   
   .social-icon,
   .menu {
@@ -1967,7 +1966,7 @@ a.move-top {
 	align-items: center;
 	margin: 10px 0;
 	flex-wrap: wrap;
-  }
+	}
   
   .social-icon__item,
   .menu__item {
@@ -2003,10 +2002,10 @@ a.move-top {
   
   .footer p {
 	color: #fff;
-	margin: 15px 0 10px 0;
+	/* margin: 15px 0 10px 0; */
 	font-size: 1rem;
 	font-weight: 300;
-  }
+	}
   
   .wave {
 	position: absolute;
