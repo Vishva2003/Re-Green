@@ -473,7 +473,7 @@ li > a:only-child:after { content: ''; }
 }
 
 .formm{
-	width: 30vw;
+	width: 40vw;
 	margin: auto;
 	padding: 30px 0 75px 0;
 	backdrop-filter: blur(10px);
@@ -526,7 +526,7 @@ li > a:only-child:after { content: ''; }
 	font-size: 25px;
 }
 .formf{
-	width: 30vw;
+	width: 40vw;
 	margin: auto;
 	margin-top: 30px;
 	margin-bottom: 40px;
