@@ -364,7 +364,7 @@ li > a:only-child:after { content: ''; }
 
 .box11
 {
-	height: 82vh;
+	height: 92vh;
 	width: 88vw;
 	display: flex;
 	margin: auto;
@@ -642,7 +642,7 @@ input::placeholder {
 	letter-spacing: 2px;
 	font-size: 45px;
 	text-align: center;
-	margin: 35px 0 70px 0;
+	margin: 35px 0 35px 0;
 }
 
 span:hover{
