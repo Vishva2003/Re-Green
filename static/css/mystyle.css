@@ -1950,7 +1950,7 @@ a.move-top {
 
 	position: relative;
 	width: 100%;
-	background: #3586ff;
+	background: #010101;
 	min-height: 100px;
 	padding: 20px 50px;
 	display: flex;
@@ -1983,7 +1983,7 @@ a.move-top {
   }
   .social-icon__link:hover {
 	transform: translateY(-10px);
-	color: #fff;
+	color: #88cf16;
   }
   
   .menu__link {
