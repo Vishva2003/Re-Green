@@ -475,7 +475,7 @@ li > a:only-child:after { content: ''; }
 .formm{
 	width: 30vw;
 	margin: auto;
-	padding: 30px 0 30px 0;
+	padding: 30px 0 75px 0;
 	backdrop-filter: blur(10px);
 	background: rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
@@ -625,7 +625,7 @@ input::placeholder {
 	margin-bottom: 12px;
 }
 .box22{
-    height: 77vh;
+    height: 87vh;
 	width: 88vw;
 	margin: auto;
 	color: rgb(12, 11, 11);
@@ -2066,7 +2066,7 @@ a.move-top {
 
 
 .hehe{
-	height: 80vh;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 }
