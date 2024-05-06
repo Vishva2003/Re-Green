@@ -475,7 +475,7 @@ li > a:only-child:after { content: ''; }
 .formm{
 	width: 40vw;
 	margin: auto;
-	padding: 30px 0 75px 0;
+	padding: 30px 0 30px 0;
 	backdrop-filter: blur(10px);
 	background: rgba(255, 255, 255, 0.2);
 	box-sizing: border-box;
@@ -590,7 +590,6 @@ li > a:only-child:after { content: ''; }
 	height: 80%;
 }
 .p2{
-	height: 20%;
 	display: flex;
 	box-sizing: border-box;
 	flex-direction: column;
