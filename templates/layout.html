@@ -139,14 +139,16 @@ h2 {
 	<!-- Navigation -->
 	<nav class="navbar navbar-expand-lg static-top" style="background-color: #1C00ff00;">
 		<div class="container">
-		
+			<div>				
 				<img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 55px; height: 55px" alt="">
 				<span style="font-family: 'kanit';letter-spacing: 0.5px;color: #010101;font-size:25px;font-weight:600 ">Re'Green</span>
+			</div>
+
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
+			<div class="eeee" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active">
 						<a class="nav-link" href="{{ url_for('home') }}">Home
@@ -163,9 +165,12 @@ h2 {
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
 					</li>
-
 				</ul>
 			</div>
+
+			<div id="google_translate_element"></div>
+				
+			
 		</div>
 	</nav>
 
@@ -202,6 +207,12 @@ h2 {
 	<!-- move top icon -->
 	<a href="#" class="move-top text-center"></a>
 	<!-- //move top icon -->
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+		}
+		</script>
 </body>
 
 </html>

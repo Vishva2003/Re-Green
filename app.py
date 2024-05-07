@@ -138,10 +138,10 @@ app = Flask(__name__)
 
 app.secret_key=os.urandom(24)
 conn = mysql.connector.connect(
-    host='regreen.criqc0wmc4yw.us-east-1.rds.amazonaws.com',
-    user='vishva',
+    host='localhost',
+    user='root',
     password='Vishva2003',
-    database='regreen'
+    database='portfolio'
 )
 cursor = conn.cursor()
 
@@ -347,4 +347,4 @@ def test():
 
 # ===============================================================================================
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",debug=True,port=80)
+    app.run(host="0.0.0.0",debug=True)
